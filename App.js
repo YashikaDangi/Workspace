@@ -65,17 +65,17 @@ async function fetchInitialNumber() {
     }
 }
 
-const job = new cron.CronJob('0 */5 * * * *', async () => {
-    try {
-        const initialNumber = await fetchInitialNumber();
-        initialNum = initialNumber;
-        await pushNumber(initialNum);
-    } catch (error) {
-        console.error('Error updating initial number:', error);
-    }
-}, null, true);
+// const job = new cron.CronJob('0 */5 * * * *', async () => {
+//     try {
+//         const initialNumber = await fetchInitialNumber();
+//         initialNum = initialNumber;
+//         await pushNumber(initialNum);
+//     } catch (error) {
+//         console.error('Error updating initial number:', error);
+//     }
+// }, null, true);
 
-job.start();
+// job.start();
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
