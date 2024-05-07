@@ -51,12 +51,9 @@ async function pushNumber(num) {
     }
 }
 
-// Fetch and update number initially
 fetchAndUpdateNumber();
 
-
-// Fetch and update number every 5 minutes
-setInterval(fetchAndUpdateNumber, 60000); // 5 minutes * 60 seconds * 1000 milliseconds
+setInterval(fetchAndUpdateNumber, 60000);
 
 app.get('/numbers', async (req, res) => {
     try {
